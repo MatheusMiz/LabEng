@@ -13,6 +13,7 @@ function ParImpar(){
         }
     }
 }
+//Função para verificar se o numero é primo
 function Primo(){
     let numero;
     let total = 0;
@@ -31,6 +32,7 @@ function Primo(){
         alert("Não é primo")
         }
     
+//Função para verificar o fatorial
 }
 function fatorial(){
     let numero;
@@ -45,6 +47,7 @@ function fatorial(){
     }
     alert("O fatorial de " +  numero + " é igual a " + fatorial)
 }
+//Função para verificar o tipo de dado
 function TipoDado(){
     let dado = prompt("Digite um dado: ", "")
     if(confirm("Deseja verificar o tipo do dado ?")){
@@ -55,3 +58,4 @@ function TipoDado(){
         document.body.innerHTML += "<p>Obrigado por visitar a página</p>"
     }
 }
+//ATIVIDADE 01  DATA: 13/08
