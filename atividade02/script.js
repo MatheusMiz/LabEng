@@ -21,6 +21,7 @@ function Palindromo(){
     const FormatarTexto = str => {
         return str.toLowerCase().replace(/[^a-z0-9]/g, '');
     }
+    
     const textoLimpo = FormatarTexto(text);
 
     const InverterTexto = textoLimpo.split('').reverse().join('')
