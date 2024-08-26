@@ -13,6 +13,26 @@ function DataAtual(){
 }
 window.onload = DataAtual;
 
+//  Verificar se o texto é um palindromo
+
+function Palindromo(){
+    const text = document.getElementById('Texto').value;
+
+    const FormatarTexto = str => {
+        return str.toLowerCase().replace(/[^a-z0-9]/g, '');
+    }
+    const textoLimpo = FormatarTexto(text);
+
+    const InverterTexto = textoLimpo.split('').reverse().join('')
+    if(textoLimpo == InverterTexto){
+        alert("O texto é um Palíndromo")
+    }
+    else{
+        alert("O texto não é um Palíndromo")
+    }
+    
+}
+
 //Exibir Horario atual
 function Relogio(){
     const agora = new Date();

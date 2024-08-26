@@ -14,6 +14,14 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
+
+    }
+    input[type="text"]{
+        padding: 20px;
+        font-size: 30px;
+        width: 50%;
+        margin: auto;
+        border: 5px solid white;
     }
     h1{
         font-family: 'Times New Roman', Times, serif;
@@ -32,12 +40,28 @@
         text-align: center;
 
     }
+    button{
+        padding: auto;
+        width: 30%;
+        background-color: darkblue;
+        color: white;
+        font-size: 50px;
+        border: 5px solid black;
+        cursor: pointer;
+    }
+    button:hover{
+        background-color: rgb(65, 65, 240);
+    }
+
 </style>
 <script src="script.js"></script>
 <body>
     <h1>Data Atual:</h1>
     <div id="DataAtual"></div><br><br>
     <h1>Hora:</h1>
-    <div id="relogio"></div>
+    <div id="relogio"></div><br><br>
+    <h1>Verificador de Palíndromo:</h1>
+    <input type="text" id="Texto" placeholder="Insira uma palavra ou frase">
+    <button onclick="Palindromo()">Verificar</button>
 </body>
 </html>
