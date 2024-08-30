@@ -1,14 +1,14 @@
 const Dados = [];
 
 function atualizarLista(){
-    Dados.sort((a,b) =>a.nome.localeCompare(b.nome));
+    Dados.sort((a,b) =>a.name.localeCompare(b.name));
     
     const Lista = document.getElementById("list");
     Lista.innerHTML = '';
 
     Dados.forEach(item => {
         const li = document.createElement('li');
-        li.textContent = `${item.nome} - ${item.idade} anos`;
+        li.textContent = `${item.name} - ${item.age} anos`;
         Lista.appendChild(li);
     });
 }
