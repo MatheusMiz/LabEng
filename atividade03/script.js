@@ -8,7 +8,7 @@ function atualizarLista(){
 
     Dados.forEach(item => {
         const li = document.createElement('li');
-        li.textContent = `${item.name} - ${item.age} anos`;
+        li.textContent = `${item.nome} - ${item.idade} anos`;
         Lista.appendChild(li);
     });
 }
