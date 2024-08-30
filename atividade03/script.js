@@ -21,7 +21,7 @@ document.getElementById('Formulario').addEventListener('submit', function(event)
     const nome = ADDnome.value.trim();
     const idade = parseInt(ADDidade.value.trim(), 10);
 
-    if(nome && isNaN(idade)){
+    if(nome && !isNaN(idade)){
         Dados.push({nome, idade});
         atualizarLista();
 
