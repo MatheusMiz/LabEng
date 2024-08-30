@@ -1,7 +1,7 @@
 const Dados = [];
 
 function atualizarLista(){
-    Dados.sort((a,b) =>a.nome.localeCompare(b.nome));
+    Dados.sort((a,b) => a.nome.localeCompare(b.nome));
     
     const Lista = document.getElementById("list");
     Lista.innerHTML = '';
@@ -13,7 +13,7 @@ function atualizarLista(){
     });
 }
 
-document.getElementById('Formulario').addEventListener('submit', function(event) {
+document.getElementById('form').addEventListener('submit', function(event) {
     event.preventDefault();
 
     const ADDnome = document.getElementById('nome');
