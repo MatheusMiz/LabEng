@@ -1,7 +1,7 @@
 const Dados = [];
 
 function atualizarLista(){
-    Dados.sort((a,b) =>a.name.localeCompare(b.name));
+    Dados.sort((a,b) =>a.nome.localeCompare(b.nome));
     
     const Lista = document.getElementById("list");
     Lista.innerHTML = '';
