@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     form.addEventListener('submit', (event) => {
         if (!validarFormulario()) {
-            event.preventDefault(); // Impede o envio do formulário se a validação falhar
+            event.preventDefault(); 
         }
     });
 
