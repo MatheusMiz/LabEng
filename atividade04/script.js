@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const telefoneFixo = document.getElementById('telefoneFixo').value;
         const telefoneCelular = document.getElementById('telefoneCelular').value;
 
-        let resultado = `<h2>informações do cadastro:</h2>
+        let resultado = `<h2>informações do cadastro: </h2>
                          <p><strong>Tipo:</strong> ${tipo}</p>
                          <p><strong>Nome:</strong> ${nome}</p>
                          <p><strong>Email:</strong> ${email}</p>
