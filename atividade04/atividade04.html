@@ -25,7 +25,7 @@
             margin-bottom: 5px;
         }
 
-        .form-input {
+        .form-control {
             font-size: 12px;
             color: #999;
             border: none;
@@ -72,30 +72,30 @@
         <form id="Form">
             <div class="mb-3">
                 <label for="nomeCompleto" class="form-label">Nome Completo</label>
-                <input type="text" class="form-input id="nomeCompleto" placeholder="Digite seu nome completo" required>
+                <input type="text" class="form-control" id="nomeCompleto" placeholder="Digite seu nome completo" required>
                 <div id="erroNomeCompleto" class="error-message"></div>
             </div>
             <div class="form-inline mb-3">
                 <div class="form-group">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-input" id="email" placeholder="seu.email@exemplo.com" required>
+                    <input type="email" class="form-control" id="email" placeholder="seu.email@exemplo.com" required>
                     <div id="erroEmail" class="error-message"></div>
                 </div>
                 <div class="form-group">
                     <label for="nascimento" class="form-label">Data de Nascimento</label>
-                    <input type="date" class="form-input" id="nascimento" required>
+                    <input type="date" class="form-control" id="nascimento" required>
                     <div id="erroNascimento" class="error-message"></div>
                 </div>
             </div>
             <div class="form-inline mb-3">
                 <div class="form-group">
                     <label for="telefoneFixo" class="form-label">Telefone Fixo</label>
-                    <input type="tel" class="form-input" id="telefoneFixo" placeholder="(XX) XXXX-XXXX" required maxlength="14">
+                    <input type="tel" class="form-control" id="telefoneFixo" placeholder="(XX) XXXX-XXXX" required maxlength="14">
                     <div id="erroTelefoneFixo" class="error-message"></div>
                 </div>
                 <div class="form-group">
                     <label for="telefoneCelular" class="form-label">Telefone Celular</label>
-                    <input type="tel" class="form-input" id="telefoneCelular" placeholder="(XX) XXXXX-XXXX" required maxlength="15">
+                    <input type="tel" class="form-control" id="telefoneCelular" placeholder="(XX) XXXXX-XXXX" required maxlength="15">
                     <div id="erroTelefoneCelular" class="error-message"></div>
                 </div>
                 <div class="form-group">
@@ -114,30 +114,30 @@
                 <div class="form-inline mb-3">
                     <div class="form-group">
                         <label for="area" class="form-label">Área de Atuação</label>
-                        <input type="text" class="form-input" id="area" placeholder="Sua área de atuação" required>
+                        <input type="text" class="form-control" id="area" placeholder="Sua área de atuação" required>
                         <div id="erroArea" class="error-message"></div>
                     </div>
                     <div class="form-group">
                         <label for="matriculaProfessor" class="form-label">Matrícula</label>
-                        <input type="text" class="form-input" id="matriculaProfessor" placeholder="Matrícula do professor" maxlength="5" required>
+                        <input type="text" class="form-control" id="matriculaProfessor" placeholder="Matrícula do professor" maxlength="5" required>
                         <div id="erroMatriculaProfessor" class="error-message"></div>
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="lattes" class="form-label">Currículo Lattes</label>
-                    <input type="text" class="form-input" id="lattes" placeholder="URL do Lattes">
+                    <input type="text" class="form-control" id="lattes" placeholder="URL do Lattes">
                 </div>
             </div>
             <div id="campoAluno" class="form-section">
                 <div class="form-inline mb-3">
                     <div class="form-group">
                         <label for="curso" class="form-label">Curso</label>
-                        <input type="text" class="form-input" id="curso" placeholder="Seu curso" required>
-                        <div id="erroCurso" class="error-message text-danger"></div>
+                        <input type="text" class="form-control" id="curso" placeholder="Seu curso" required>
+                        <div id="erroCurso" class="error-message"></div>
                     </div>
                     <div class="form-group">
                         <label for="matriculaAluno" class="form-label">Matrícula</label>
-                        <input type="text" class="form-input" id="matriculaAluno" placeholder="Matrícula do aluno" maxlength="10" required>
+                        <input type="text" class="form-control" id="matriculaAluno" placeholder="Matrícula do aluno" maxlength="10" required>
                         <div id="erroMatriculaAluno" class="error-message"></div>
                     </div>
                 </div>
