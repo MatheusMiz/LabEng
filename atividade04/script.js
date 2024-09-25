@@ -187,10 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     document.getElementById('Form').addEventListener('submit', (event) => {
-        if(!validarFormulario()){
-            event.preventDefault();
-            return;
-        }
+        
 
         const tipo = document.querySelector('input[name="tipo"]:checked').value;
         const nome = document.getElementById('nomeCompleto').value;
