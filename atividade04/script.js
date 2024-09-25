@@ -187,8 +187,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     document.getElementById('Form').addEventListener('submit', (event) => {
-        event.preventDefault();
         if(!validarFormulario()){
+            event.preventDefault();
             return;
         }
 
