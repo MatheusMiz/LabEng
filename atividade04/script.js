@@ -224,9 +224,9 @@ document.addEventListener('DOMContentLoaded', () => {
             resultado += `<p><strong>Curso:</strong> ${curso}</p>
                           <p><strong>Matrícula Aluno:</strong> ${matriculaAluno}</p>`;
     
-        }
+            }
 
-    document.getElementById('Resultado').innerHTML = resultado;
+        document.getElementById('Resultado').innerHTML = resultado;
     });
 
     atualizarCampos();
