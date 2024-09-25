@@ -187,6 +187,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     document.getElementById('Form').addEventListener('submit', (event) => {
+        event.preventDefault();
+        if(!validarFormulario()){
+            return;
+        }
 
         const tipo = document.querySelector('input[name="tipo"]:checked').value;
         const nome = document.getElementById('nomeCompleto').value;
@@ -202,17 +206,21 @@ document.addEventListener('DOMContentLoaded', () => {
                          <p><strong>Data de Nascimento:</strong> ${dataNascimento}</p>
                          <p><strong>Telefone Fixo:</strong> ${telefoneFixo}</p>
                          <p><strong>Telefone Celular:</strong> ${telefoneCelular}</p>`;
+        let pessoa;
 
         if (tipo === 'Professor') {
             const area = document.getElementById('area').value;
             const matriculaProfessor = document.getElementById('matriculaProfessor').value;
             const lattes = document.getElementById('lattes').value;
+            pessoa = new Professor(nome, email, dataNascimento, telefoneFixo, telefoneCelular, area, matriculaProfessor, lattes);
+            
             resultado += `<p><strong>Área de Atuação:</strong> ${area}</p>
                           <p><strong>Matrícula Professor:</strong> ${matriculaProfessor}</p>
                           <p><strong>Lattes:</strong> ${lattes}</p>`;
         } else if (tipo === 'Aluno') {
             const curso = document.getElementById('curso').value;
             const matriculaAluno = document.getElementById('matriculaAluno').value;
+            pessoa = new Aluno(nome, email, dataNascimento, telefoneFixo, telefoneCelular, curso, matriculaAluno);
             resultado += `<p><strong>Curso:</strong> ${curso}</p>
                           <p><strong>Matrícula Aluno:</strong> ${matriculaAluno}</p>`;
         }
