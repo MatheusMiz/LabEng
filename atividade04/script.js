@@ -223,9 +223,10 @@ document.addEventListener('DOMContentLoaded', () => {
             pessoa = new Aluno(nome, email, dataNascimento, telefoneFixo, telefoneCelular, curso, matriculaAluno);
             resultado += `<p><strong>Curso:</strong> ${curso}</p>
                           <p><strong>Matrícula Aluno:</strong> ${matriculaAluno}</p>`;
+    
         }
 
-        document.getElementById('Resultado').innerHTML = resultado;
+    document.getElementById('Resultado').innerHTML = resultado;
     });
 
     atualizarCampos();
