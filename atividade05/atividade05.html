@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tarefas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input {
+            margin-right: 10px;
+            padding: 5px;
+        }
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .btn-adicionar {
+            background-color: green;
+            color: white;
+        }
+        .btn-detalhes {
+            background-color: blue;
+            color: white;
+            margin-left: 5px;
+        }
+        .btn-concluir {
+            background-color: green;
+            color: white;
+            margin-left: 5px;
+        }
+        .btn-remover {
+            background-color: red;
+            color: white;
+            margin-left: 5px;
+        }
+        .tarefa {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .descricao {
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gerenciador de Tarefas</h1>
+    <form id="formTarefa">
+        <input type="text" id="nome" placeholder="Nome da Tarefa" required /><br><br>
+        <input type="text" id="descricao" placeholder="Descrição da Tarefa" required /><br>
+        <button type="submit" class="btn-adicionar">Adicionar Tarefa</button>
+    </form>
+    <div id="listaTarefas"></div>
+
+    <script src="script.js"></script> 
+</body>
+</html>
