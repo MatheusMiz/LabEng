@@ -186,8 +186,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }, true);
 
 
-    document.getElementById('Form').addEventListener('submit', (event) => {
+    function salvarCadastro(pessoa) {
 
+        let typePessoa = '';
+        if (pessoa instanceof Professor) {
+            typePessoa = 'Professor';
+        } else if (pessoa instanceof Aluno) {
+            typePessoa = 'Aluno';
+        }
+
+
+        let resultado = `<h2>Dados:</h2>
+                         <p><strong>Tipo:</strong> ${typePessoa}</p>
+                         <p><strong>Nome:</strong> ${pessoa.nome}</p>
+                         <p><strong>Email:</strong> ${pessoa.email}</p>
+                         <p><strong>Data de Nascimento:</strong> ${pessoa.dataNascimento}</p>
+                         <p><strong>Telefone Fixo:</strong> ${pessoa.telefoneFixo}</p>
+                         <p><strong>Telefone Celular:</strong> ${pessoa.telefoneCelular}</p>`;
+
+        if (pessoa instanceof Professor) {
+            resultado += `<p><strong>Área de Atuação:</strong> ${pessoa.area}</p>
+                          <p><strong>Matrícula Professor:</strong> ${pessoa.matriculaProfessor}</p>
+                          <p><strong>Lattes:</strong> ${pessoa.lattes}</p>`;
+        } else if (pessoa instanceof Aluno) {
+            const curso = document.getElementById('curso').value;
+            const matriculaAluno = document.getElementById('matriculaAluno').value;
+            resultado += `<p><strong>Curso:</strong> ${pessoa.curso}</p>
+                          <p><strong>Matrícula Aluno:</strong> ${pessoa.matriculaAluno}</p>`;
+        }
+
+        document.getElementById('Resultado').innerHTML = resultado;
+    };
+    function Obj(){
         const tipo = document.querySelector('input[name="tipo"]:checked').value;
         const nome = document.getElementById('nomeCompleto').value;
         const email = document.getElementById('email').value;
@@ -195,30 +225,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const telefoneFixo = document.getElementById('telefoneFixo').value;
         const telefoneCelular = document.getElementById('telefoneCelular').value;
 
-        let resultado = `<h2>informações do cadastro: </h2>
-                         <p><strong>Tipo:</strong> ${tipo}</p>
-                         <p><strong>Nome:</strong> ${nome}</p>
-                         <p><strong>Email:</strong> ${email}</p>
-                         <p><strong>Data de Nascimento:</strong> ${dataNascimento}</p>
-                         <p><strong>Telefone Fixo:</strong> ${telefoneFixo}</p>
-                         <p><strong>Telefone Celular:</strong> ${telefoneCelular}</p>`;
-
-        if (tipo === 'Professor') {
+        if (tipo === 'Professor'){
             const area = document.getElementById('area').value;
             const matriculaProfessor = document.getElementById('matriculaProfessor').value;
             const lattes = document.getElementById('lattes').value;
-            resultado += `<p><strong>Área de Atuação:</strong> ${area}</p>
-                          <p><strong>Matrícula Professor:</strong> ${matriculaProfessor}</p>
-                          <p><strong>Lattes:</strong> ${lattes}</p>`;
+            return new Professor(nome, email, dataNascimento, telefoneFixo, telefoneCelular, area, matriculaProfessor, lattes);
         } else if (tipo === 'Aluno') {
             const curso = document.getElementById('curso').value;
             const matriculaAluno = document.getElementById('matriculaAluno').value;
-            resultado += `<p><strong>Curso:</strong> ${curso}</p>
-                          <p><strong>Matrícula Aluno:</strong> ${matriculaAluno}</p>`;
+            return new Aluno(nome, email, dataNascimento, telefoneFixo, telefoneCelular, curso, matriculaAluno);
         }
-
-        document.getElementById('Resultado').innerHTML = resultado;
+    }
+    document.getElementById('Form').addEventListener('submit', (event) => {
+        salvarCadastro(Obj());
     });
-
     atualizarCampos();
 });
