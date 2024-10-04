@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letreiro Fatec</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            font-size: 24px;
+            color: #eb0707;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const DigitandoTexto = ({ text }) => {
+            const [ExibindoText, setExibindoText] = React.useState('');
+            let index = 0;
+
+            React.useEffect(() => {
+                const intervalo = setInterval(() => {
+                    if (index < text.length) {
+                        setExibindoText(prev => prev + text[index]);
+                        index++;
+                    } else {
+                        clearInterval(intervalo);
+                    }
+                }, 100); 
+
+                return () => clearInterval(intervalo); 
+            }, [text]);
+
+            return <div>{ExibindoText}</div>;
+        };
+
+        const App = () => {
+            return (
+                <div>
+                    <DigitandoTexto text="Venha estudar na Fatec" />
+                </div>
+            );
+        };
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
